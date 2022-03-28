@@ -95,8 +95,10 @@ def main_func():
             number_of_dimes = insert_coin("dimes")
             number_of_nickles = insert_coin("nickles")
             number_of_pennies = insert_coin("pennies")
-            inserted_money = number_of_pennies * 0.01 + number_of_nickles * 0.05 + number_of_dimes * 0.1 + \
+            inserted_money = round(
+                number_of_pennies * 0.01 + number_of_nickles * 0.05 + number_of_dimes * 0.1 + \
                                  number_of_quarters * 0.25
+            )
 
             if inserted_money < MENU[choice]["cost"]:
                 print(f"Sorry that's not enough money. Amount of ${inserted_money} refunded.")
